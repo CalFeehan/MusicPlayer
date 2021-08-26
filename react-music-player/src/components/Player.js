@@ -28,7 +28,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying, audioRef, 
                 <p>{getTime(songInfo.currentTime)}</p>
                 <input type="range" 
                 onChange={dragHandler}
-                min={0} max={songInfo.duration} 
+                min={0} max={songInfo.duration || 0} 
                 value={songInfo.currentTime}/>
                 <p>{getTime(songInfo.duration)}</p>
             </div>
