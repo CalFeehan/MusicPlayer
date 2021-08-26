@@ -16,6 +16,7 @@ export default function App() {
   const [songs, setSongs] = useState(data())
   const [currentSong, setCurrentSong] = useState(songs[0])
   const [isPlaying, setIsPlaying] = useState(false)
+  const [libraryStatus, setLibraryStatus] = useState(false)
 
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
@@ -25,11 +26,15 @@ export default function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav 
+      libraryStatus={libraryStatus}
+      setLibraryStatus={setLibraryStatus}/>
       <Song 
       currentSong={currentSong}/>
       
       <Player 
+      setCurrentSong={setCurrentSong}
+      songs={songs}
       setSongInfo={setSongInfo}
       songInfo={songInfo}
       audioRef={audioRef}
@@ -38,6 +43,7 @@ export default function App() {
       currentSong={currentSong}/>
 
       <Library 
+      libraryStatus={libraryStatus}
       currentSong={currentSong}
       setSongs={setSongs}
       isPlaying={isPlaying}

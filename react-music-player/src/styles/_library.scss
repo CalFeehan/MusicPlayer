@@ -6,6 +6,9 @@
   height: 100%;
   box-shadow: 2px 2px 50px gray;
   overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
 
   h2 {
     padding: 2rem;
@@ -18,7 +21,7 @@
   padding: 1rem 2rem 1rem 2rem;
   cursor: pointer;
   img {
-    width: 60%;
+    width: 40%;
   }
   &:hover {
     background: rgba(212, 212, 212, 0.5);
@@ -56,4 +59,9 @@
 
 .selected {
   background: rgba(164, 177, 250, 0.267);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
 }
