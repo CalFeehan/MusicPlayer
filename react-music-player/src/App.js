@@ -27,9 +27,9 @@ export default function App() {
     setSongInfo({...songInfo, currentTime: current, duration: duration})
   }
 
-  const songEndHandler = async () => {
+  const songEndHandler = () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    await setCurrentSong(songs[(currentIndex + 1) || songs[0]])
+    setCurrentSong(songs[(currentIndex + 1)] || songs[0]);
     if(isPlaying){audioRef.current.play()}
   }
   

@@ -28,7 +28,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying, audioRef, 
 
     const skipTrackHandler = async (direction) => {
         let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-        await setCurrentSong(songs[(currentIndex + direction + songs.length) % songs.length])
+        await setCurrentSong(songs[(currentIndex + direction + songs.length) % songs.length]);
         if(isPlaying){audioRef.current.play()}
     }
 
@@ -44,9 +44,9 @@ export default function Player({currentSong, isPlaying, setIsPlaying, audioRef, 
             </div>
 
             <div className="play-control">
-                <FontAwesomeIcon className="skip-back" onClick={() => skipTrackHandler(-1)} size="2x" icon={faAngleLeft}/>
+                <FontAwesomeIcon className="skip-back" onClick={() => skipTrackHandler(-1)} size="3x" icon={faAngleLeft}/>
                 <FontAwesomeIcon className="play" onClick={playSongHandler} size="2x" icon={isPlaying ? faPause : faPlay}/>
-                <FontAwesomeIcon className="skip-forward" onClick={() => skipTrackHandler(1)} size="2x" icon={faAngleRight}/>
+                <FontAwesomeIcon className="skip-forward" onClick={() => skipTrackHandler(1)} size="3x" icon={faAngleRight}/>
             </div>
 
         </div>
