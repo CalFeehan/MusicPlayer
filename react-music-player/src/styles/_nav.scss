@@ -4,7 +4,10 @@
   justify-content: space-around;
   align-items: center;
 
-  button {
+  .library-button {
+    font-size: 16px;
+    height: 40px;
+    width: 100px;
     background: white;
     border: none;
     cursor: pointer;
@@ -15,6 +18,25 @@
       background: rgb(65, 65, 65);
       color: white;
     }
+  }
+}
+
+.spotify-button {
+  font-size: 16px;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  color: green !important;
+  text-decoration: none;
+  background: white;
+  border: none;
+  cursor: pointer;
+  border: 2px solid rgb(0, 80, 0);
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgb(0, 80, 0);
+    color: white !important;
   }
 }
 

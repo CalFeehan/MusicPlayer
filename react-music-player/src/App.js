@@ -14,7 +14,7 @@ export default function App() {
   const audioRef = useRef(null);
 
   // states
-  const [songInfo, setSongInfo] = useState({currentTime: 0, duration: 0,})
+  const [songTimer, setSongTimer] = useState({currentTime: 0, duration: 0,})
   const [songs, setSongs] = useState(data())
   const [currentSong, setCurrentSong] = useState(songs[0])
   const [isPlaying, setIsPlaying] = useState(false)
@@ -24,7 +24,7 @@ export default function App() {
   const updateTime = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration || 0;
-    setSongInfo({...songInfo, currentTime: current, duration: duration})
+    setSongTimer({...songTimer, currentTime: current, duration: duration})
   }
 
   const endSong = () => {
@@ -47,8 +47,8 @@ export default function App() {
       <Player 
       setCurrentSong={setCurrentSong}
       songs={songs}
-      setSongInfo={setSongInfo}
-      songInfo={songInfo}
+      setSongTimer={setSongTimer}
+      songTimer={songTimer}
       audioRef={audioRef}
       isPlaying={isPlaying}
       setIsPlaying={setIsPlaying}
