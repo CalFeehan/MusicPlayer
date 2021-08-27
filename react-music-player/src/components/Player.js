@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlay, faPause, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
-import {playAudio} from '../util.js'
 
 export default function Player({currentSong, isPlaying, setIsPlaying, audioRef, setSongInfo, songInfo, songs, setCurrentSong}) {
     
@@ -27,10 +26,10 @@ export default function Player({currentSong, isPlaying, setIsPlaying, audioRef, 
         setSongInfo({...songInfo, currentTime: e.target.value})
     }
 
-    const skipTrackHandler = (direction) => {
+    const skipTrackHandler = async (direction) => {
         let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-        setCurrentSong(songs[(currentIndex + direction + songs.length) % songs.length])
-        playAudio(isPlaying, audioRef)
+        await setCurrentSong(songs[(currentIndex + direction + songs.length) % songs.length])
+        if(isPlaying){audioRef.current.play()}
     }
 
     return(

@@ -25,10 +25,17 @@ export default function App() {
     const current = e.target.currentTime;
     const duration = e.target.duration || 0;
     setSongInfo({...songInfo, currentTime: current, duration: duration})
-}
+  }
+
+  const songEndHandler = () => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    setCurrentSong(songs[(currentIndex + 1) || songs[0]])
+    if(isPlaying){audioRef.current.play()}
+  }
+  
 
   return (
-    <div className="App">
+    <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav 
       libraryStatus={libraryStatus}
       setLibraryStatus={setLibraryStatus}/>
@@ -54,7 +61,7 @@ export default function App() {
       audioRef={audioRef}
       songs={songs} 
       setCurrentSong={setCurrentSong}/>
-      <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} ref={audioRef} src={currentSong.audio}></audio>
+      <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} onEnded={songEndHandler} ref={audioRef} src={currentSong.audio}></audio>
     </div>
   );
 }

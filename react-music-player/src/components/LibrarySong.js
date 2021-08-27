@@ -1,12 +1,11 @@
 import React from 'react'
-import {playAudio} from '../util.js'
 
 export default function LibrarySong({song, songs, setCurrentSong, isPlaying, setSongs, currentSong, audioRef}) {
 
     // event handlers
-    const songSelectHandler = () => {
-        setCurrentSong(song);
-        playAudio(isPlaying, audioRef)
+    const songSelectHandler = async () => {
+        await setCurrentSong(song);
+        if(isPlaying){audioRef.current.play()}
     }
 
     return(
