@@ -41,6 +41,7 @@ export default function App() {
       setLibraryStatus={setLibraryStatus}/>
 
       <Song 
+      isPlaying={isPlaying}
       currentSong={currentSong}/>
       
       <Player 
