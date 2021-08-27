@@ -1,7 +1,7 @@
 import React from 'react'
 import LibrarySong from './LibrarySong'
 
-export default function Library({songs, setCurrentSong, audioRef, isPlaying, setSongs, currentSong, libraryStatus}) {
+export default function Library({songs, setCurrentSong, audioRef, isPlaying, currentSong, libraryStatus}) {
     return (
         <div className={`library ${libraryStatus ? 'active-library' : ''}`}>
             <h2>Library</h2>
@@ -12,7 +12,6 @@ export default function Library({songs, setCurrentSong, audioRef, isPlaying, set
                 isPlaying={isPlaying}
                 audioRef={audioRef}
                 setCurrentSong={setCurrentSong} 
-                songs={songs}
                 song={song}
                 key={song.id}/>
                 ))}

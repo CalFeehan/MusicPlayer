@@ -21,13 +21,13 @@ export default function App() {
   const [libraryStatus, setLibraryStatus] = useState(false)
 
   //event handlers
-  const timeUpdateHandler = (e) => {
+  const updateTime = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration || 0;
     setSongInfo({...songInfo, currentTime: current, duration: duration})
   }
 
-  const songEndHandler = () => {
+  const endSong = () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     setCurrentSong(songs[(currentIndex + 1)] || songs[0]);
     if(isPlaying){audioRef.current.play()}
@@ -57,12 +57,11 @@ export default function App() {
       <Library 
       libraryStatus={libraryStatus}
       currentSong={currentSong}
-      setSongs={setSongs}
       isPlaying={isPlaying}
       audioRef={audioRef}
       songs={songs} 
       setCurrentSong={setCurrentSong}/>
-      <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} onEnded={songEndHandler} ref={audioRef} src={currentSong.audio}></audio>
+      <audio onTimeUpdate={updateTime} onLoadedMetadata={updateTime} onEnded={endSong} ref={audioRef} src={currentSong.audio}></audio>
     </div>
   );
 }

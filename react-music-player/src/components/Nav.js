@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMusic} from "@fortawesome/free-solid-svg-icons"
 
-export default function Nav({setLibraryStatus, libraryStatus}) {
+export default function Nav({libraryStatus, setLibraryStatus}) {
     return (
         <nav className="nav">
             <h1>Music Player</h1>

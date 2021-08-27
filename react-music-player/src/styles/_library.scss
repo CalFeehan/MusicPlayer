@@ -42,6 +42,15 @@
   }
 }
 
+.selected {
+  background: rgba(164, 177, 250, 0.267);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5);
@@ -57,15 +66,6 @@
   background: rgba(155, 155, 155, 0.5);
   border-radius: 20px;
   border: transparent;
-}
-
-.selected {
-  background: rgba(164, 177, 250, 0.267);
-}
-
-.active-library {
-  transform: translateX(0%);
-  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
