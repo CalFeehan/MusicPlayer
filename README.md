@@ -11,7 +11,7 @@ Following this I will be using the Spotify API to access user playlists, and wil
     - cross browser compatibility and design
     - storing Spotify API credentials server side as env variables not secure in frontend
     - async functions to avoid NaN and null references upon load
-    - keyframes resetting due to responsive classes being used
+    - keyframes resetting due to conditional classes being used
 
 ## File Structure
 
