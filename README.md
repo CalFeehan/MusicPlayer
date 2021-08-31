@@ -6,15 +6,16 @@ Initial functionality includes playing music files (info stored in data.js), pla
 
 Following this I will be using the Spotify API to access user playlists, and will include responsive search functionality in the nav. 
 
-# Challenges
+## Challenges
 
     - cross browser compatibility and design
     - storing Spotify API credentials server side as env variables not secure in frontend
     - async functions to avoid NaN and null references upon load
     - keyframes resetting due to responsive classes being used
 
-# File Structure
+## File Structure
 
+```
 .                  
 ├── docs                    # Documentation files
 ├── node modules            # Node files
@@ -31,3 +32,4 @@ Following this I will be using the Spotify API to access user playlists, and wil
 ├── package-lock.json
 ├── package.json
 └── README.md
+```
