@@ -1,6 +1,6 @@
 # Music Player
 
-This project served as an introduction to building a single page responsive web app, using React.
+This project served as an introduction to building a responsive, single page web app, using React.
 
 Initial functionality includes playing music files (info stored in data.js), play/pause songs, skipping forward/backwards on time bar, change song through library (collapsable navbar), showing song information and an animated song cover.
 
@@ -11,7 +11,7 @@ Following this I will be using the Spotify API to access user playlists, and wil
     - cross browser compatibility and design
     - storing Spotify API credentials server side as env variables not secure in frontend
     - async functions to avoid NaN and null references upon load
-    - keyframes resetting due to responsive classes being used, heirarchy change needed
+    - keyframes resetting due to responsive classes being used
 
 # File Structure
 
